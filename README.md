@@ -33,7 +33,7 @@ Der Task Scheduler startet das Skript `update.ps1` automatisch mit administrativ
 - **Run with highest privileges:**  
   `check`
   
-- **Triggers:** 
+**Triggers:** 
 - **Name:**  
   `At startup`
 
@@ -43,7 +43,7 @@ Der Task Scheduler startet das Skript `update.ps1` automatisch mit administrativ
 - **Stop task if it runs longer than:**  
   `2 hours`
 
-- **Actions:**
+**Actions:**
 - **Programm/Skript:**  
   `powershell.exe`
 
@@ -53,7 +53,7 @@ Der Task Scheduler startet das Skript `update.ps1` automatisch mit administrativ
 - **Start in (optional):**  
   `C:\Program Files\custom_rsc\taskscheduler`
 
-- **Settings:**
+**Settings:**
 - **Stop task if it runs longer than:**  
   `4 hours`
 
