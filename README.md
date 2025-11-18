@@ -26,6 +26,24 @@ Der Task Scheduler startet das Skript `update.ps1` automatisch mit administrativ
 
 ### Beispielkonfiguration:
 
+- **General:** 
+- **Name:**  
+  `Winget_update`
+
+- **Run with highest privileges:**  
+  `check`
+  
+- **Triggers:** 
+- **Name:**  
+  `At startup`
+
+- **Delay Task for:**  
+  `15 minutes`
+
+- **Stop task if it runs longer than:**  
+  `2 hours`
+
+- **Actions:**
 - **Programm/Skript:**  
   `powershell.exe`
 
@@ -34,6 +52,10 @@ Der Task Scheduler startet das Skript `update.ps1` automatisch mit administrativ
 
 - **Start in (optional):**  
   `C:\Program Files\custom_rsc\taskscheduler`
+
+- **Settings:**
+- **Stop task if it runs longer than:**  
+  `4 hours`
 
 ---
 
