@@ -26,7 +26,7 @@ Der Task Scheduler startet das Skript `update.ps1` automatisch mit administrativ
 
 ### Beispielkonfiguration:
 
-- **General:** 
+**General:** 
 - **Name:**  
   `Winget_update`
 
