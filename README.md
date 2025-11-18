@@ -62,8 +62,41 @@ Der Task Scheduler startet das Skript `update.ps1` automatisch mit administrativ
 ## Voraussetzungen
 
 - Windows 11 (für optionale Updates relevant)
+- Windows mit installiertem **winget** (Windows Package Manager).
+- Ausreichende Berechtigungen, um winget-Befehle auszuführen (z. B. Administrator).
 - PowerShell mit Ausführungsrechten für Skripte (`ExecutionPolicy Bypass`)
-- Winget (Windows Package Manager) für Anwendungsupdates
+
+- **Vor dem ersten Ausführen des Skripts** muss winget bereinigt werden, um eventuelle Altversionen oder nicht erkannte Programme zu behandeln:
+  1. Führe aus:  
+     ```powershell
+     winget upgrade --all --accept-package-agreements --include-unknown
+     ```
+  2. Prüfe danach mit:  
+     ```powershell
+     winget upgrade
+     ```
+  3. Wenn weiterhin Programme angezeigt werden, deinstalliere diese mit dem `uninstall`-Befehl. Die Ursache ist oft, dass der Upgrade-Pfad fehlerhaft oder nicht vorhanden ist:
+     ```powershell
+     winget uninstall --all-versions <Paket-ID>
+     ```
+     Beispiel:  
+     ```powershell
+     winget uninstall --all-versions Microsoft.DotNet.Framework.DeveloperPack.4.6
+     ```
+     Hinweis: `"Microsoft.DotNet.Framework.DeveloperPack.4.6"` ist **nicht** der Name, sondern die **ID** des Pakets. Wiederhole diese Deinstallation, bis keine Updates mehr gemeldet werden.
+
+  4. Falls Programme deinstalliert werden mussten, weil der Upgrade-Pfad fehlte, kannst du die gewünschte Version neu installieren:
+     - Suche zuerst die ID:  
+       ```powershell
+       winget search 7-zip
+       ```
+     - Installiere dann das Programm anhand der ID:  
+       ```powershell
+       winget install 7zip.7zip
+       ```
+
+- Optional: Überprüfe, dass deine winget-Quellen aktuell sind, z. B. via `winget source update`.
+
 
 ---
 
